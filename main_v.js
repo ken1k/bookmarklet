@@ -1,6 +1,9 @@
 async function getPointData(dom) {
     const result = [];
 
+    const tbody = dom.querySelector("ul.list");
+    const rows = tbody.querySelectorAll(".list__one");
+
     for (const row of rows) {
         const dateTag = row.querySelector(".list__one__date");
         const point = row.querySelector(".list__one__contents--info");
