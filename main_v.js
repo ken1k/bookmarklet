@@ -18,9 +18,8 @@ async function getPointData(dom) {
 const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
 const header = ['日付', 'ポイント'];  // CSVヘッダー
+dataArray = [];
 
-// 全てのページの情報を取得
-getPointData(document).then(dataArray => {
     // CSVダウンロード
     dataArray.unshift(header);
     // "文字列"は引用符で囲う
@@ -34,4 +33,4 @@ getPointData(document).then(dataArray => {
     downloadTag.href = URL.createObjectURL(blob);
     downloadTag.click();
     URL.revokeObjectURL(downloadTag.href);
-})
+)
