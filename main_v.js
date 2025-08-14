@@ -1,4 +1,4 @@
-async function getPointData(dom) {
+function getPointData(dom) {
     const result = [];
 
     const tbody = dom.querySelector("ul.list");
@@ -18,7 +18,7 @@ async function getPointData(dom) {
 const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
 const header = ['日付', 'ポイント'];  // CSVヘッダー
-dataArray = [];
+dataArray = getPointData(document);
 alert('はろーわーるど');
 
     // CSVダウンロード
