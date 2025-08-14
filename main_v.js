@@ -19,6 +19,7 @@ const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
 const header = ['日付', 'ポイント'];  // CSVヘッダー
 dataArray = [];
+alert('はろーわーるど');
 
     // CSVダウンロード
     dataArray.unshift(header);
@@ -33,4 +34,4 @@ dataArray = [];
     downloadTag.href = URL.createObjectURL(blob);
     downloadTag.click();
     URL.revokeObjectURL(downloadTag.href);
-)
+
