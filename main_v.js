@@ -6,11 +6,12 @@ function getPointData(dom) {
 
     for (const row of rows) {
         const dateTag = row.querySelector(".list__one__date");
+        const nameTag = row.querySelector(".list__one__contents--name");
         const pointTag = row.querySelector(".list__one__contents--info");
         let pointIT = pointTag.innerText;
         let point = pointIT.substr(0, pointIT.indexOf(' '));
         
-        result.push([dateTag.innerText, point]);
+        result.push([dateTag.innerText, nameTag.innerText, point]);
     }
 
     return result;
@@ -19,7 +20,7 @@ function getPointData(dom) {
 // ダウンロードするファイル情報
 const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
-const header = ['日付', 'ポイント'];  // CSVヘッダー
+const header = ['日付', '名前', 'ポイント'];  // CSVヘッダー
 dataArray = getPointData(document);
 alert(dataArray[0]);
 
