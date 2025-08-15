@@ -7,8 +7,8 @@ function getPointData(dom) {
     for (const row of rows) {
         const dateTag = row.querySelector(".list__one__date");
         const pointTag = row.querySelector(".list__one__contents--info");
-        pointIT = pointTag.innerText;
-        point = pointIT.substr(0, pointIT.indexOf(' '));
+        let pointIT = pointTag.innerText;
+        let point = pointIT.substr(0, pointIT.indexOf(' '));
         
         result.push([dateTag.innerText, point]);
     }
