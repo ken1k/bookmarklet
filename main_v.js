@@ -9,9 +9,15 @@ function getPointData(dom) {
         const nameTag = row.querySelector(".list__one__contents--name");
         const pointTag = row.querySelector(".list__one__contents--info");
         let pointIT = pointTag.innerText;
+        let action = "";
+        if(pointIT.match("期間限定") != null) {
+            action = "期間限定";
+        } else if(pointIT.match("ストア限定") != null) {
+            action = "ストア限定";
+        }
         let point = pointIT.substr(0, pointIT.indexOf(' '));
         
-        result.push([dateTag.innerText, nameTag.innerText, point]);
+        result.push([dateTag.innerText, nameTag.innerText, point, action]);
     }
 
     return result;
@@ -20,7 +26,7 @@ function getPointData(dom) {
 // ダウンロードするファイル情報
 const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
-const header = ['日付', '名前', 'ポイント'];  // CSVヘッダー
+const header = ['日付', '名前', 'ポイント', '動作'];  // CSVヘッダー
 dataArray = getPointData(document);
 alert(dataArray[0]);
 
