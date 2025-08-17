@@ -2,7 +2,7 @@ function getPointData(dom) {
     const result = [];
 
     const tbody = dom.querySelector("tbody");
-    const rows = tbody.body.querySelectorAll("tr");
+    const rows = tbody.querySelectorAll("tr");
 
     for (const row of rows) {
         const dateTag = row.querySelectorAll("td")[0]
@@ -24,9 +24,9 @@ function getPointData(dom) {
 }
 
 // ダウンロードするファイル情報
-const fileName = 'pointDataV.csv';  // ダウンロードするファイル名
+const fileName = 'pointDatad.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
-const header = ['日付', '名前', 'ポイント', '動作'];  // CSVヘッダー
+const header = ['日付'];  // CSVヘッダー
 dataArray = getPointData(document);
 alert(dataArray[0]);
 
