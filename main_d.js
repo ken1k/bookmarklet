@@ -9,8 +9,8 @@ function getPointData(dom) {
         if(tags.length == 0) {
             continue;
         }
-        
-        result.push(tags[0].innerText);
+        date = '"' + tags[0].innerText + '"';
+        result.push(date);
     }
 
     return result;
