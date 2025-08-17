@@ -9,8 +9,8 @@ function getPointData(dom) {
         if(tags.length == 0) {
             continue;
         }
-        date = '"' + tags[0].innerText + '"';
-        result.push([date]);
+        
+        result.push([tags[0].innerText, tags[3].innerText], tags[5].innerText, tags[4].innerText]);
     }
 
     return result;
@@ -19,7 +19,7 @@ function getPointData(dom) {
 // ダウンロードするファイル情報
 const fileName = 'pointDatad.csv';  // ダウンロードするファイル名
 const delimiter = ',';  // 区切り文字
-const header = ['日付'];  // CSVヘッダー
+const header = ['日付', '名前', 'ポイント', '動作'];  // CSVヘッダー
 dataArray = getPointData(document);
 alert(dataArray);
 
