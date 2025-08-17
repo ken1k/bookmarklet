@@ -5,19 +5,12 @@ function getPointData(dom) {
     const rows = tbody.querySelectorAll("tr");
 
     for (const row of rows) {
-        const dateTag = row.querySelectorAll("td")[0]
-//        const nameTag = row.querySelector(".list__one__contents--name");
-//       const pointTag = row.querySelector(".list__one__contents--info");
-//        let pointIT = pointTag.innerText;
-//        let action = "";
-//        if(pointIT.match("期間限定") != null) {
-//            action = "期間限定";
-//        } else if(pointIT.match("ストア限定") != null) {
-//            action = "ストア限定";
-//        }
-//        let point = pointIT.substr(0, pointIT.indexOf(' '));
+        const tags = row.querySelectorAll("td")
+        if(tags.length == 0) {
+            continue;
+        }
         
-        result.push(dateTag.innerText);
+        result.push(tags[0].innerText);
     }
 
     return result;
