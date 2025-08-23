@@ -10,7 +10,7 @@ function getPointData(dom) {
             continue;
         }
         
-        result.push([tags[0].innerText, tags[3].innerText, tags[5].innerText, tags[4].innerText]);
+        result.push([tags[0].innerText, tags[3].innerText, tags[5].innerText, tags[4].innerText.replace(/\n/g, '')]);
     }
 
     return result;
