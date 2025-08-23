@@ -26,13 +26,13 @@ alert(dataArray);
     // CSVダウンロード
     dataArray.unshift(header);
     // "文字列"は引用符で囲う
-alert("pre");
+//alert("pre");
     const dataStr = dataArray.map(arr => arr.map(s => (typeof s === "string") ? `"${s}"` : s).join(delimiter)).join('\n');
     // const dataStr = dataArray.map(arr => arr.map(s => (typeof s === "string") ? s.replaceAll("\n", "  ") : s).join(delimiter)).join('\n');  // 改行コードを含めない場合
-alert(dataStr);
+//alert(dataStr);
     const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
     const blob = new Blob([bom, dataStr], {type: "text/csv"});
-alert("create");
+//alert("create");
     const downloadTag = document.createElement('a');
     downloadTag.download = fileName;
     downloadTag.href = URL.createObjectURL(blob);
